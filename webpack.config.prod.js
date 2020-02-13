@@ -32,6 +32,19 @@ module.exports = merge(baseConfig, {
             loader: 'sass-loader'
           }
         ]
+      },
+      {
+        test: /\.(png|jp(e*)g|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 1,
+              name: '[name].[hash:8].[ext]',
+              outputPath: 'images'
+            }
+          }
+        ]
       }
     ]
   },
